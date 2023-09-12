@@ -1,17 +1,28 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+import java.util.Random;
 public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void lab1() {
+        System.out.printf("------Laboratory work №1------ \n");
+        Random rand = new Random();
+        int number = rand.nextInt(1, Integer.MAX_VALUE/4); //генерируем положительное число (делим на 4 чтобы не было выхода за пределы int)
+        int countOfSteps = 0;
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.printf("Input number: " + number + "\n");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        while (number>1) {
+            if (number % 2 == 0) {
+                number = number / 2;
+                countOfSteps++;
+            } else {
+                number = 3 * number + 1;
+                countOfSteps++;
+            }
         }
+        System.out.printf("Output number:  " + number + "\n");
+        System.out.printf("Count of steps: " + countOfSteps + "\n");
+    }
+    public static void main(String[] args) {
+        lab1();
     }
 }

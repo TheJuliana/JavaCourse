@@ -135,7 +135,44 @@ public class Main {
         System.out.println("--------------------");
         System.out.println("Reccomended road: " + numberOfRoad + ". The max height of car: " + maxHeight);
     }
+    public static void lab5() {
+        System.out.println("------Laboratory work №5------");
+        System.out.println("Enter the number");
+        boolean error = false;
+        Scanner s = new Scanner(System.in);
+        String number = s.nextLine().trim();
+        if (number.length() > 3) {
+            System.out.println("Too long");
+        } else {
+            int sum = 0;
+            int product = 1;
+
+            for (int i = 0; i < number.length(); i++) {
+                if (!Character.isDigit(number.charAt(i))) {
+                    System.out.println("Char is not a digit with pos at " + (i+1));
+                    error = true;
+                    break;
+                } else {
+                    sum += Character.getNumericValue(number.charAt(i));
+                    product *= Character.getNumericValue(number.charAt(i));
+                }
+            }
+
+            if (!error) {
+                System.out.println("sum = " + sum);
+                System.out.println("product = " + product);
+                if ((sum % 2 == 0) && (product % 2 == 0)) {
+                    System.out.println("The number is twice even");
+                } else {
+                    System.out.println("The number is NOT twice even");
+                }
+            } else {
+                System.out.println("Try again");
+            }
+        }
+
+    }
     public static void main(String[] args) {
-        lab4();
+        lab5();
     }
 }

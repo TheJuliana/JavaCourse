@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -24,7 +25,6 @@ public class Main {
         System.out.printf("Output number:  " + number + "\n");
         System.out.printf("Count of steps: " + countOfSteps + "\n");
     }
-
     public static void  lab2() {
         System.out.printf("------Laboratory work №2------ \n");
         System.out.printf("Enter the size of array: ");
@@ -50,7 +50,59 @@ public class Main {
         }
         System.out.printf("Result number: " + result + "\n");
     }
+    public static void lab3() {
+        class Point {
+            int _x, _y;
+            public Point(int x, int y) {
+                _x = x;
+                _y = y;
+            }
+        }
+        System.out.println("------Laboratory work №3------ ");
+        System.out.println("Enter the position of treasure: ");
+        Scanner s = new Scanner(System.in);
+        int x = s.nextInt();
+        //System.out.println("x: " + x);
+        int y = s.nextInt();
+        //System.out.println("y: " + y);
+        Point treasure = new Point(x, y);
+        Point way = new Point(0, 0);
+        int countOfSteps = 0;
+        int minCountOfSteps = 0;
+        String command = null;
+        int coordinate = 0;
+        while (!Objects.equals(command, "stop")) {
+            command = s.nextLine();
+            switch (command) {
+                case "north":
+                    coordinate = s.nextInt();
+                    way._y += coordinate;
+                    countOfSteps += 1;
+                    break;
+                case "south":
+                    coordinate = s.nextInt();
+                    way._y -= coordinate;
+                    countOfSteps += 1;
+                    break;
+                case "west":
+                    coordinate = s.nextInt();
+                    way._x -= coordinate;
+                    countOfSteps += 1;
+                    break;
+                case "east":
+                    coordinate = s.nextInt();
+                    way._x += coordinate;
+                    countOfSteps += 1;
+                    break;
+            }
+            if (treasure._x == way._x && treasure._y == way._y) {
+                minCountOfSteps = countOfSteps;
+            }
+        }
+        System.out.println("(!REQUIRED OUTPUT!) Min count of steps to find a treasure: " + minCountOfSteps);
+        System.out.println("All count of steps in map to find a treasure: " + countOfSteps);
+    }
     public static void main(String[] args) {
-        lab2();
+        lab3();
     }
 }

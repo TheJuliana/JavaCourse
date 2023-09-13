@@ -60,17 +60,17 @@ public class Main {
         }
         System.out.println("------Laboratory work №3------ ");
         System.out.println("Enter the position of treasure: ");
+
         Scanner s = new Scanner(System.in);
         int x = s.nextInt();
-        //System.out.println("x: " + x);
         int y = s.nextInt();
-        //System.out.println("y: " + y);
         Point treasure = new Point(x, y);
         Point way = new Point(0, 0);
         int countOfSteps = 0;
         int minCountOfSteps = 0;
         String command = null;
         int coordinate = 0;
+
         while (!Objects.equals(command, "stop")) {
             command = s.nextLine();
             switch (command) {
@@ -99,10 +99,43 @@ public class Main {
                 minCountOfSteps = countOfSteps;
             }
         }
+
         System.out.println("(!REQUIRED OUTPUT!) Min count of steps to find a treasure: " + minCountOfSteps);
         System.out.println("All count of steps in map to find a treasure: " + countOfSteps);
     }
+    public static void lab4() {
+        System.out.println("------Laboratory work №4------");
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the count of roads:");
+        int roads = s.nextInt();
+        ArrayList<Integer> maxHeights = new ArrayList<>();
+
+        for (int i = 0; i < roads; i++) {
+            System.out.println("Enter the count of tunnels in road №" + (i+1) + ":");
+            int countOfTunnels = s.nextInt();
+            int maxPossibleHeight = Integer.MAX_VALUE;
+            for (int j = 0; j < countOfTunnels; j++) {
+                System.out.println("Enter the height of tunnel №" + (j+1) + ":");
+                int currentHeight = s.nextInt();
+                if (currentHeight < maxPossibleHeight) {
+                    maxPossibleHeight = currentHeight;
+                }
+            }
+            System.out.println("Max possible height of road №:" + (i+1) + " " + maxPossibleHeight);
+            maxHeights.add(maxPossibleHeight);
+        }
+        int maxHeight = maxHeights.get(0);
+        int numberOfRoad = 0;
+        for (int i = 0; i < maxHeights.size(); i++) {
+            if (maxHeights.get(i) > maxHeight) {
+                maxHeight = maxHeights.get(i);
+                numberOfRoad = (i+1);
+            }
+        }
+        System.out.println("--------------------");
+        System.out.println("Reccomended road: " + numberOfRoad + ". The max height of car: " + maxHeight);
+    }
     public static void main(String[] args) {
-        lab3();
+        lab4();
     }
 }

@@ -135,7 +135,7 @@ public class Main {
         System.out.println("--------------------");
         System.out.println("Reccomended road: " + numberOfRoad + ". The max height of car: " + maxHeight);
     }
-    public static void lab5() {
+    /*public static void lab5() {
         System.out.println("------Laboratory work №5------");
         System.out.println("Enter the number");
         boolean error = false;
@@ -168,6 +168,44 @@ public class Main {
                 }
             } else {
                 System.out.println("Try again");
+            }
+        }
+
+    }*/
+
+    public static void lab5 () {
+        class Number {
+            int _x, _y, _z;
+            Number(int x, int y, int z) {
+                _x = x;
+                _y = y;
+                _z = z;
+            };
+            final boolean isTwiseEven() {
+                if (((_x+_y+_z) % 2 == 0) && ((_x*_y*_z) % 2 == 0)) {
+                    return true;
+                } else  {
+                    return false;
+                }
+            }
+        }
+
+        System.out.println("Enter the number");
+        Scanner s = new Scanner(System.in);
+        String number = s.nextLine().trim();
+        if (number.length() > 3) {
+            System.out.println("Too much digits");
+        } else {
+            if (!Character.isDigit(number.charAt(0)) || !Character.isDigit(number.charAt(1)) || !Character.isDigit(number.charAt(2))) {
+                System.out.println("Input is not a digit");
+            } else {
+                Number num = new Number(number.charAt(0), number.charAt(1), number.charAt(2));
+
+                if (num.isTwiseEven()) {
+                    System.out.println("The number is twice even");
+                } else {
+                    System.out.println("The number is NOT twice even");
+                }
             }
         }
 

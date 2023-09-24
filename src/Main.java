@@ -6,6 +6,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Labs2.lab3();
+        Labs2.lab8();
     }
 }

@@ -3,9 +3,9 @@ package Lab3.src;
 import java.util.*;
 
 public class Hall {
-    private ArrayList<ArrayList<Boolean>> _seats = new ArrayList<ArrayList<Boolean>>(); //кресла (занято/не занято)
-    private ArrayList<Movie> _movieSessions = new ArrayList<Movie>();
-    private Queue<Movie> _movies = new Queue<Movie>() {
+    private ArrayList<ArrayList<Boolean>> seats = new ArrayList<ArrayList<Boolean>>(); //кресла (занято/не занято)
+    //private ArrayList<Movie> movieSessions = new ArrayList<Movie>();
+    private Queue<Movie> movies = new Queue<Movie>() {
         @Override
         public boolean add(Movie movie) {
             return false;
@@ -96,7 +96,9 @@ public class Hall {
 
         }
     };
+    Hall() {
 
+    }
     public static void createMovie(){
         System.out.println("------Movie Creation-------");
 

@@ -6,7 +6,7 @@ public class Movie {
     private String name;
     private  LocalDateTime beginning;
     private LocalDateTime duration;
-    public void Movie(String name, LocalDateTime beginning, LocalDateTime duration){
+    Movie(String name, LocalDateTime beginning, LocalDateTime duration){
         this.name = name;
         this.beginning =  beginning;
         this.duration = duration;

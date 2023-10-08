@@ -108,12 +108,28 @@ public class Cinema {
         }
     }
     public void printInfo() {
-        for (int i = 0; i < sessions.size(); i++) {
-            System.out.print("№" + i + ": ");
-            for (int j = 0; j < sessions.get(i).size(); j++) {
-                System.out.print(j);
+        if (sessions.isEmpty()) {
+            System.out.println("No available sessions");
+            if (!movies.isEmpty()) {
+                System.out.println("Saved movies: ");
+                for (int i = 0; i < movies.size(); i++) {
+                    System.out.println("Movie №" + (i+1) + ": " + movies.get(i).getName());
+                }
             }
-            System.out.println("------------------");
+            if (!halls.isEmpty()) {
+                System.out.println("Saved halls: ");
+                for (int i = 0; i < halls.size(); i++) {
+                    System.out.println("Hall №" + (i+1) + ": " + halls.get(i).getName());
+                }
+            }
+        } else {
+            for (int i = 0; i < sessions.size(); i++) {
+                System.out.print("№" + i + ": ");
+                for (int j = 0; j < sessions.get(i).size(); j++) {
+                    System.out.print(j);
+                }
+                System.out.println("------------------");
+            }
         }
     }
     public void addSessions() {

@@ -105,6 +105,7 @@ public class CinemaChain {
                 for (int i = 0; i < this.cinemas.size(); i++) {
                     if (Objects.equals(this.cinemas.get(i).getName(), name)) {
                         this.cinemas.get(i).AddHall();
+                        break ADH;
                     }
                 }
             }
@@ -249,6 +250,21 @@ public class CinemaChain {
             }
         }
     }
-    public static void FindUpcoming(){};//ищет ближайший фильм
+    public void FindUpcoming() {
+        System.out.println("------Welcome!------");
+        UPC:
+        while (true) {
+            if (!cinemas.isEmpty()) {
+                System.out.println("Available cinemas: ");
+                for (int i = 0; i < this.cinemas.size(); i++) {
+                    this.cinemas.get(i).printInfo();
+                }
+            } else {
+                System.out.println("No available cinemas");
+                break UPC;
+            }
 
+        }
+        ;//ищет ближайший фильм
+    }
 }

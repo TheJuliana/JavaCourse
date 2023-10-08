@@ -11,6 +11,10 @@ public class Movie {
     Movie(String name) {
         this.name = name;
     }
+
+    String getName() {
+        return this.name;
+    }
     Movie(String name, ArrayList<Double> beginning, double duration){
         this.name = name;
         this.timeOfBeginning =  beginning;
@@ -28,27 +32,42 @@ public class Movie {
         }
     }
     public void addSchedule() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Enter the duration of movie (in format 00,00):");
-        double dur = s.nextDouble();
-        System.out.println("DUR:" + dur);
-        this.duration = dur;
-        System.out.println("Add times of beginning:");
         ADD:
         while (true) {
-            Scanner s1 = new Scanner(System.in);
-            System.out.println("Enter the time (in format 00,00):");
-            double begin = s1.nextDouble();
-            this.timeOfBeginning.add(begin);
-            System.out.println("Want to add another time [Y/N]?");
-            Scanner s2 = new Scanner(System.in);
-            String answer = s2.nextLine();
-            switch (answer) {
-                case "Y":
-                    continue ADD;
-                case "N":
-                default:
-                    break ADD;
+            Scanner s = new Scanner(System.in);
+            System.out.println("Enter the duration of movie (in format 00,00):");
+            double dur;
+            try {
+                dur = s.nextDouble();
+            } catch (Exception e) {
+                System.out.println("ERROR");
+                break ADD;
+            }
+            System.out.println("DUR:" + dur);
+            this.duration = dur;
+            ADD2:
+            while (true){
+                System.out.println("Add times of beginning:");
+                Scanner s1 = new Scanner(System.in);
+                System.out.println("Enter the time (in format 00,00):");
+                double begin;
+                try {
+                    begin = s1.nextDouble();
+                } catch (Exception e) {
+                    System.out.println("ERROR");
+                    break ADD2;
+                }
+                this.timeOfBeginning.add(begin);
+                System.out.println("Want to add another time [Y/N]?");
+                Scanner s2 = new Scanner(System.in);
+                String answer = s2.nextLine();
+                switch (answer) {
+                    case "Y":
+                        continue ADD2;
+                    case "N":
+                    default:
+                        break ADD;
+                }
             }
         }
 

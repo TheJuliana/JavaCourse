@@ -14,6 +14,9 @@ public class Hall {
         this.seats = seats;
         this.movies = movies;
     }
+    String getName() {
+        return this.name;
+    }
     public void printInfo(){
         System.out.println("Name:" + this.name);
         System.out.println("Capacity: " + seats.size());

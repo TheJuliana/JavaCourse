@@ -6,15 +6,16 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class Cinema {
-    private ArrayList<Hall> halls = new ArrayList<Hall>();
+    private ArrayList<Hall> halls;
 /*    public void addHall(Hall hall) {
         halls.add(hall);
     }*/
+public static void printInfo() {}
 public Cinema() {};
     public void createHall(){
-        System.out.println("------Welcome to the creation of halls------");
         CREATION:
         while (true) {
+            System.out.println("------Welcome to the creation of halls------");
             Scanner s = new Scanner(System.in);
             System.out.println("Enter the width of the row and the number of seats and movies ");
             int rows = s.nextInt();

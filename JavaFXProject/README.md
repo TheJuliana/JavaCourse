@@ -2,7 +2,8 @@
 
 --------
 
-![download](https://github.com/TheJuliana/JavaCourse/assets/62110361/9a3ff17c-be81-4a59-870d-909061e74bbc)
+![image (2)](https://github.com/TheJuliana/JavaCourse/assets/62110361/c705dbd6-bd2b-448b-899d-17342cf4acb0)
+
 # The wheel of Fortune app made with JavaFX
 The main application file is 'App.java'
 

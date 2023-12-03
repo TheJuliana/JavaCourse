@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.text.Font;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,6 +22,8 @@ public class App extends Application {
         scene = new Scene(loadFXML("fortune"), 800, 500);
         stage.setScene(scene);
         stage.setTitle("Wheel of Fortune");
+        stage.setResizable(false);
+        stage.getIcons().add(new Image("file:src\\main\\resources\\com\\example\\icon.png"));
         stage.show();
     }
 

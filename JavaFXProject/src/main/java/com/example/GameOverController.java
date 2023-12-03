@@ -2,21 +2,13 @@ package com.example;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
-import javafx.animation.Interpolator;
-import javafx.animation.RotateTransition;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
-import javafx.event.EventHandler;
+
 
 public class GameOverController {
     @FXML
@@ -36,7 +28,6 @@ public class GameOverController {
 
     @FXML
     private void onExit() throws IOException{
-        //text_lost.setText("LOSTLOST");
         Platform.exit();
     }
 }

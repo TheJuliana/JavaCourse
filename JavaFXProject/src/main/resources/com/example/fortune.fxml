@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FortuneController">
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #111111; -fx-border-radius: 15; -fx-effect: shadow;">
+   <children>
+      <Button id="spinning_button" fx:id="spinning_button" layoutX="531.0" layoutY="369.0" mnemonicParsing="false" onAction="#Spin" prefHeight="41.0" prefWidth="84.0" style="-fx-background-color: #464646;" text="SPIN" textOverrun="CLIP">
+            <font>
+               <Font name="Arial Bold" size="18.0" />
+            </font>
+            <textFill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="1.0" green="0.7956852912902832" />
+                        </color>
+                     </Stop>
+                     <Stop offset="0.9973082099596231">
+                        <color>
+                           <Color red="1.0" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill></Button>
+      <ImageView id="wheel" fx:id="wheel" fitHeight="308.0" fitWidth="334.0" layoutX="37.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@wheel2min-300x300.png" />
+         </image>
+            <viewport>
+               <Rectangle2D />
+            </viewport>
+      </ImageView>
+      <ImageView id="pointer" cache="true" fitHeight="76.0" fitWidth="38.0" layoutX="326.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 65; -fx-effect: drop_shadow;">
+         <image>
+            <Image url="@target-147x300.png" />
+         </image>
+      </ImageView>
+         <Label id="title" layoutX="355.0" layoutY="42.0" text="TEST YOUR LUCK!" textAlignment="CENTER" wrapText="true">
+            <textFill>
+               <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="1.0" green="0.7804568409919739" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="0.04771577566862106" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill>
+            <font>
+               <Font name="23 seconds to midnight" size="64.0" />
+            </font>
+         </Label>
+      <Text fx:id="resulted_text" fill="WHITE" layoutX="419.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" wrappingWidth="308.0">
+         <font>
+            <Font name="Arial" size="48.0" />
+         </font>
+      </Text>
+     
+   </children>
+</Pane>
+</VBox>

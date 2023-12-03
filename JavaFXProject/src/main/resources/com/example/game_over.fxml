@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #111111; -fx-border-radius: 15; -fx-effect: shadow;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.GameOverController">
+
+   <children>
+      <ImageView fx:id="imageview_skeleton" fitHeight="400.0" fitWidth="418.0" layoutX="69.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@skeleton.gif" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <Text fx:id="text_game_over" fill="RED" layoutX="421.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GAME OVER!" textAlignment="CENTER">
+         <font>
+            <Font name="23 seconds to midnight" size="64.0" />
+         </font>
+      </Text>
+         <Text fx:id="text_lost" fill="#ffda00" layoutX="442.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You lost everything" textAlignment="CENTER">
+         <font>
+            <Font name="23 seconds to midnight" size="36.0" />
+         </font>
+      </Text>
+      <Button id="exit_btn" layoutX="500.0" layoutY="338.0" mnemonicParsing="false" onAction="#onExit"  style="-fx-background-color: #464646;" text="EXIT" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="36.0" />
+         </font></Button>
+   </children>
+</Pane>
